@@ -129,5 +129,7 @@ def main():
            st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 if __name__ == "__main__":
-   port = int(os.environ.get("PORT", 10000))
-   main()
+    # Get port from environment variable (Render sets this)
+    port = int(os.environ.get("PORT", "8501"))  # Default to 8501 if PORT not set
+    st.set_page_config(page_title="Crypto Market Analyzer", page_icon="📈")
+    main()
